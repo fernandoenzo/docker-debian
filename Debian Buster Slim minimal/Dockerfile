@@ -3,6 +3,7 @@ MAINTAINER Fernando Enzo Guarini (fernandoenzo@gmail.com)
 
 COPY scripts/basics /tmp
 COPY scripts/install-language /tmp
+COPY static/systemd /etc/apt/preferences.d/
 COPY static/bashrc /root/.bashrc
 COPY static/bashrc /etc/skel/.bashrc
 COPY static/bash_aliases /root/.bash_aliases
