@@ -20,5 +20,6 @@ RUN bash /tmp/install-language
 RUN bash /tmp/basics
 
 ENV LANG es_ES.UTF-8
+ENV TERM xterm-256color
 
 CMD /bin/bash
