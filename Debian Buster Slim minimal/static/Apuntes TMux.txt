@@ -1,0 +1,122 @@
+--------
+Comandos
+--------
+
+Renombrar sesión actual:
+
+  [Prefijo] + $
+
+Renombrar ventana actual:
+
+  [Prefijo] + ,
+
+Matar ventana actual:
+
+  [Prefijo] + &
+
+Matar panel actual:
+
+  [Prefijo] + x
+
+Visualizar el número de cada panel:
+
+  [Prefijo] + Q
+
+Enfocar otro panel:
+
+  [Prefijo] + ↑ → ↓ ←
+  [Prefijo] + k l j h
+
+Redimensionar panel:
+
+  [Prefijo] + K L J H
+
+Intercambiar dos paneles:
+
+  [Prefijo] + g   (para intercambiar el panel actual con el que le indiquemos numéricamente)
+  [Prefijo] + G   (para intercambiar los dos paneles que indiquemos)
+  [Prefijo] + : swap-pane -s 3 -t 5  (para intercambiar los paneles 3 y 5)
+  [Prefijo] + {   (para intercambiar el panel actual con su anterior, } para hacerlo con el siguiente)
+
+Intercambiar dos ventanas:
+
+  [Prefijo] + : swap-window -s 3 -t 5  (para intercambiar las ventanas 3 y 5)
+
+Romper el panel actual y moverlo a una ventana nueva propia (ambos comandos son equivalentes):
+
+  [Prefijo] + !
+  [Prefijo] + : break-pane
+
+Mover el panel actual a otra ventana, incluso de otra sesión:
+
+  [Prefijo] + @  (sólo para la sesión actual)
+  [Prefijo] + : join-pane -t http:3   (3 es la ventana destino de la sesión llamada http)
+
+Aplicar la siguiente plantilla de paneles a la ventana actual:
+
+  [Prefijo] + Espacio
+
+Sincronizar escritura en los paneles de la ventana actual:
+
+  [Prefijo] + Control+G
+
+Recargar configuración tmux.conf:
+
+  [Prefijo[ + r
+  [Prefijo] + : source-file ~/.tmux.conf
+
+
+----------
+Modo copia
+----------
+
+Activar:
+
+  [Prefijo] + Enter
+  [Prefijo] + [
+
+Activar selección:
+
+  Control + Espacio
+
+Subir y bajar rápidamente por el buffer:
+
+  Control + Flechas Arriba / Abajo
+
+Ir a la línea anterior / siguiente:
+
+  Control + p / n
+
+Ir al carácter anterior / siguiente:
+
+  Control + b / f
+
+Copiar el texto seleccionado:
+
+  Alt + w
+
+Pegar el texto seleccionado:
+
+  [Prefijo] + p
+  [Prefijo] + ]
+
+Listar todos los buffers que hemos ido guardando (copiando):
+
+  [Prefijo] + b
+  [Prefijo] + #
+
+Seleccionar un buffer y pegarlo en el terminal:
+
+  [Prefijo] + P
+  [Prefijo] + =
+
+Mostrar el buffer actual (o cualquier otro buffer):
+
+  [Prefijo] + : show-buffer
+  [Prefijo] + : show-buffer -b buffer0001
+
+Guardar el buffer actual (o cualquier otro buffer) en un archivo de texto:
+
+  [Prefijo] + : save-buffer archivo.txt
+  [Prefijo] + : save-buffer -b buffer0004 archivo.txt
+
