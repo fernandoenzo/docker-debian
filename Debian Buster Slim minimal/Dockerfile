@@ -22,4 +22,4 @@ RUN bash /tmp/basics
 ENV LANG es_ES.UTF-8
 ENV TERM xterm-256color
 
-CMD /bin/bash
+ENTRYPOINT service cron start > /dev/null 2>&1 ; /bin/bash

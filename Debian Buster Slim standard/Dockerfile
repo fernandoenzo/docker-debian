@@ -4,4 +4,4 @@ MAINTAINER Fernando Enzo Guarini (fernandoenzo@gmail.com)
 COPY scripts/basics /tmp
 RUN bash /tmp/basics
 
-ENTRYPOINT dpkg-reconfigure openssh-server > /dev/null 2>&1 ; /bin/bash
+ENTRYPOINT service cron start > /dev/null 2>&1 ; dpkg-reconfigure openssh-server > /dev/null 2>&1 ; /bin/bash
