@@ -12,8 +12,8 @@ COPY static/tmux.conf /root/.tmux.conf
 COPY static/tmux.conf /etc/skel/.tmux.conf
 COPY static/tmux.conf.local /root/.tmux.conf.local
 COPY static/tmux.conf.local /etc/skel/.tmux.conf.local
-COPY ["static/Apuntes TMux.txt", "/root"]
-COPY ["static/Apuntes TMux.txt", "/etc/skel"]
+COPY ["static/Apuntes tmux.txt", "/root"]
+COPY ["static/Apuntes tmux.txt", "/etc/skel"]
 
 RUN apt-get update ; apt-get install -y --no-install-recommends aptitude
 RUN bash /tmp/install-language
