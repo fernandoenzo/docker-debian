@@ -9,7 +9,7 @@ cp /etc/skel/.tmux.conf /root
 cp /etc/skel/.tmux.conf.local /root
 cp /etc/skel/"Apuntes tmux.txt" /root
 
-aptitude install -R -y anacron bash-completion bzip2 cron htop iproute2 iptables iputils-ping less nano procps readline-common secure-delete sudo tmux unzip wget zip
+aptitude install -R -y anacron bash-completion bzip2 cron htop iproute2 iptables iputils-ping less nano procps readline-common secure-delete sudo tmux tree unzip wget zip
 chmod 4755 /bin/ping
 apt-get -y autoremove ; aptitude -y autoclean ; apt-get -y autoclean
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.aptitude
