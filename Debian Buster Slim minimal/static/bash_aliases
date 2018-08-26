@@ -1,6 +1,0 @@
-alias sudo='sudo '
-alias hh='history -c'
-alias actualizar='history -c ; sudo aptitude update ; sudo aptitude full-upgrade ; sudo apt-get autoremove ; sudo aptitude autoclean ; sudo apt-get autoclean'
-alias exit='history -c ; exit'
-alias tmux='history -c ; tmux'
-
