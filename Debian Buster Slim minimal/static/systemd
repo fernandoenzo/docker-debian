@@ -1,4 +1,4 @@
-Package: libsystemd0
+Package: libsystemd0 python3-systemd
 Pin: release *
 Pin-Priority: 500
 
