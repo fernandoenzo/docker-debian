@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e  # Exit immediately if a command exits with a non-zero status.
+set -x  # All executed commands are printed to the terminal
+
+mkdir -p /usr/share/man/man1
+
+aptitude update
+aptitude install -y -R ca-certificates default-jre man-db
+
+apt-get -y autoremove ; aptitude -y autoclean ; apt-get -y autoclean
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.aptitude /etc/ssh/ssh_host*
+

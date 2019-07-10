@@ -1,0 +1,8 @@
+Package: libsystemd0 python3-systemd
+Pin: release *
+Pin-Priority: 500
+
+Package: *systemd*
+Pin: release *
+Pin-Priority: -1
+
