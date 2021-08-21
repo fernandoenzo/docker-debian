@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e  # Exit immediately if a command exits with a non-zero status.
+set -x  # All executed commands are printed to the terminal
+
+cp /tmp/static/systemd /etc/apt/preferences.d/
+cp /tmp/scripts/boot /usr/local/boot
+
+apt-get update ; apt-get install -y --no-install-recommends aptitude
+
+bash /tmp/scripts/install-language
+
+aptitude install -R -y anacron bash-completion bzip2 cron htop iproute2 iptables iputils-ping less nano procps readline-common rdfind ripgrep secure-delete sudo tmux tree unzip wget zip
+
+aptitude install -y gnupg
+
+chmod 4755 /bin/ping
+
+unzip -d /root -o /tmp/static/home.zip
+unzip -d /etc/skel -o /tmp/static/home.zip
+
+apt-get -y autoremove ; aptitude -y autoclean ; apt-get -y autoclean
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.aptitude
+
