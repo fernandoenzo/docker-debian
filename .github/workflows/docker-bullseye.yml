@@ -8,8 +8,19 @@ env:
 
 jobs:
   docker:
-
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        repo: [
+               'fernandoenzo/docker-bind',
+               'fernandoenzo/docker-coturn',
+               'fernandoenzo/docker-ddclient',
+               'fernandoenzo/docker-email',
+               'fernandoenzo/docker-nfs',
+               'fernandoenzo/docker-sslh',
+              ]
+
     steps:
       -
         name: Checkout
@@ -28,4 +39,13 @@ jobs:
           context: debian-bullseye
           file: debian-bullseye/Dockerfile
           push: true
-          tags: ${{ env.REGISTRY }}/${{ github.actor }}/debian:11, ${{ env.REGISTRY }}/${{ github.actor }}/debian:bullseye, ${{ env.REGISTRY }}/${{ github.actor }}/debian:latest
+          tags: ${{ env.REGISTRY }}/${{ github.actor }}/debian:11,
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:bullseye,
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:latest
+      -
+        name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.BUILD_INTEGRATION }}
+          repository: ${{ matrix.repo }}
+          event-type: debian-updated

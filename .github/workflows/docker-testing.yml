@@ -8,8 +8,20 @@ env:
 
 jobs:
   docker:
-
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        repo: [
+               'fernandoenzo/docker-mariadb',
+               'fernandoenzo/docker-maubot',
+               'fernandoenzo/docker-mkvtoolnix',
+               'fernandoenzo/docker-moodle',
+               'fernandoenzo/docker-nginx-proxy',
+               'fernandoenzo/docker-openvpn-client',
+               'fernandoenzo/docker-postgresql',
+              ]
+
     steps:
       -
         name: Checkout
@@ -29,3 +41,10 @@ jobs:
           file: debian-testing/Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.actor }}/debian:testing
+      -
+        name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.BUILD_INTEGRATION }}
+          repository: ${{ matrix.repo }}
+          event-type: debian-updated
