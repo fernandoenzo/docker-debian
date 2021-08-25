@@ -17,6 +17,7 @@ jobs:
                'fernandoenzo/docker-coturn',
                'fernandoenzo/docker-ddclient',
                'fernandoenzo/docker-email',
+               'fernandoenzo/docker-matrix',
                'fernandoenzo/docker-nfs',
                'fernandoenzo/docker-sslh',
               ]
