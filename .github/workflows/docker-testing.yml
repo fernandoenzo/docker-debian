@@ -16,7 +16,6 @@ jobs:
                'fernandoenzo/docker-mariadb',
                'fernandoenzo/docker-maubot',
                'fernandoenzo/docker-mkvtoolnix',
-               'fernandoenzo/docker-moodle',
                'fernandoenzo/docker-nginx-proxy',
                'fernandoenzo/docker-openvpn-client',
                'fernandoenzo/docker-postgresql',

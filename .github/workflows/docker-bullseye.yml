@@ -18,6 +18,7 @@ jobs:
                'fernandoenzo/docker-ddclient',
                'fernandoenzo/docker-email',
                'fernandoenzo/docker-matrix',
+               'fernandoenzo/docker-moodle',
                'fernandoenzo/docker-nfs',
                'fernandoenzo/docker-sslh',
               ]
@@ -42,7 +43,8 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.actor }}/debian:11,
                 ${{ env.REGISTRY }}/${{ github.actor }}/debian:bullseye,
-                ${{ env.REGISTRY }}/${{ github.actor }}/debian:latest
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:latest,
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:stable
       -
         name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1

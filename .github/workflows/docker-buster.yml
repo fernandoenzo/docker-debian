@@ -35,7 +35,8 @@ jobs:
           file: debian-buster/Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.actor }}/debian:10,
-                ${{ env.REGISTRY }}/${{ github.actor }}/debian:buster
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:buster,
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:oldstable,
       -
         name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
