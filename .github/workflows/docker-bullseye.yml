@@ -20,6 +20,7 @@ jobs:
                'fernandoenzo/docker-matrix',
                'fernandoenzo/docker-moodle',
                'fernandoenzo/docker-nfs',
+               'fernandoenzo/docker-openvpn-client',
                'fernandoenzo/docker-sslh',
               ]
 
