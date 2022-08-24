@@ -1,4 +1,4 @@
-Package: libsystemd0 python3-systemd
+Package: libsystemd0 python3-systemd systemd-standalone-tmpfiles
 Pin: release *
 Pin-Priority: 500
 
