@@ -1,0 +1,59 @@
+name: Docker Bookworm
+
+on:
+  workflow_dispatch
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        repo: [
+               'fernandoenzo/docker-bind',
+               'fernandoenzo/docker-coturn',
+               'fernandoenzo/docker-ddclient',
+               'fernandoenzo/docker-email',
+               'fernandoenzo/docker-mariadb',
+               'fernandoenzo/docker-matrix',
+               'fernandoenzo/docker-mkvtoolnix',
+               'fernandoenzo/docker-moodle',
+               'fernandoenzo/docker-nginx-proxy',
+               'fernandoenzo/docker-nfs',
+               'fernandoenzo/docker-openvpn-client',
+               'fernandoenzo/docker-postgresql',
+               'fernandoenzo/docker-sslh',
+              ]
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Build and push Docker images
+        uses: docker/build-push-action@v2.7.0
+        with:
+          context: debian-bookworm
+          file: debian-bookworm/Dockerfile
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ github.actor }}/debian:12,
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:bookworm,
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:latest,
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:stable
+      -
+        name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.BUILD_INTEGRATION }}
+          repository: ${{ matrix.repo }}
+          event-type: debian-updated

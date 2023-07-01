@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e  # Exit immediately if a command exits with a non-zero status.
+set -x  # All executed commands are printed to the terminal
+
+LANG=es_ES.UTF-8
+
+aptitude install -y -R locales
+echo "$LANG UTF-8" > /etc/locale.gen
+locale-gen
+update-locale --reset LANG=$LANG  # Unnecesary, since the language is taken from ENV
+
+ln -fs /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+dpkg-reconfigure -f noninteractive tzdata
+

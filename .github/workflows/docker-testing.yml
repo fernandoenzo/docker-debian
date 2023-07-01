@@ -13,11 +13,7 @@ jobs:
     strategy:
       matrix:
         repo: [
-               'fernandoenzo/docker-mariadb',
                'fernandoenzo/docker-maubot',
-               'fernandoenzo/docker-mkvtoolnix',
-               'fernandoenzo/docker-nginx-proxy',
-               'fernandoenzo/docker-postgresql',
               ]
 
     steps:

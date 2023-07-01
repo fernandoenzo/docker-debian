@@ -10,20 +10,6 @@ jobs:
   docker:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        repo: [
-               'fernandoenzo/docker-bind',
-               'fernandoenzo/docker-coturn',
-               'fernandoenzo/docker-ddclient',
-               'fernandoenzo/docker-email',
-               'fernandoenzo/docker-matrix',
-               'fernandoenzo/docker-moodle',
-               'fernandoenzo/docker-nfs',
-               'fernandoenzo/docker-openvpn-client',
-               'fernandoenzo/docker-sslh',
-              ]
-
     steps:
       -
         name: Checkout
@@ -43,13 +29,4 @@ jobs:
           file: debian-bullseye/Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{ github.actor }}/debian:11,
-                ${{ env.REGISTRY }}/${{ github.actor }}/debian:bullseye,
-                ${{ env.REGISTRY }}/${{ github.actor }}/debian:latest,
-                ${{ env.REGISTRY }}/${{ github.actor }}/debian:stable
-      -
-        name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.BUILD_INTEGRATION }}
-          repository: ${{ matrix.repo }}
-          event-type: debian-updated
+                ${{ env.REGISTRY }}/${{ github.actor }}/debian:bullseye
