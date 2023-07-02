@@ -13,7 +13,8 @@ jobs:
     strategy:
       matrix:
         repo: [
-               'fernandoenzo/docker-maubot',
+               'fernandoenzo/docker-mkvtoolnix',
+               'fernandoenzo/docker-nginx',
               ]
 
     steps:

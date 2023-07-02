@@ -1,5 +1,4 @@
 FROM debian:bookworm-slim
-MAINTAINER Fernando Enzo Guarini (fernandoenzo@gmail.com)
 
 COPY scripts/ /tmp/scripts
 COPY static/ /tmp/static

@@ -21,7 +21,6 @@ jobs:
                'fernandoenzo/docker-matrix',
                'fernandoenzo/docker-mkvtoolnix',
                'fernandoenzo/docker-moodle',
-               'fernandoenzo/docker-nginx-proxy',
                'fernandoenzo/docker-nfs',
                'fernandoenzo/docker-openvpn-client',
                'fernandoenzo/docker-postgresql',
