@@ -1,9 +1,8 @@
 FROM debian:testing-slim
 
-COPY scripts/ /tmp/scripts
-COPY static/ /tmp/static
+COPY contents/ /tmp/contents
 
-RUN bash /tmp/scripts/basics
+RUN bash /tmp/contents/scripts/basics
 
 ENV LANG es_ES.UTF-8
 ENV TERM xterm-256color
