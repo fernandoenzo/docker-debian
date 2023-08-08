@@ -1,8 +1,12 @@
-FROM debian:bullseye-slim
+FROM debian:bullseye-slim as debian
 
 COPY contents/ /tmp/contents
 
 RUN bash /tmp/contents/scripts/basics
+
+
+FROM scratch
+COPY --from=debian / /
 
 ENV LANG es_ES.UTF-8
 ENV TERM xterm-256color
