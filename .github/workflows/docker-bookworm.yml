@@ -25,6 +25,7 @@ jobs:
                'fernandoenzo/docker-openvpn-client',
                'fernandoenzo/docker-postgresql',
                'fernandoenzo/docker-sslh',
+               'fernandoenzo/docker-wstunnel',
               ]
 
     steps:
