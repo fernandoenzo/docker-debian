@@ -15,6 +15,7 @@ jobs:
         repo: [
                'fernandoenzo/docker-mkvtoolnix',
                'fernandoenzo/docker-nginx',
+               'fernandoenzo/docker-obfsproxy',
               ]
 
     steps:
