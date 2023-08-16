@@ -16,6 +16,7 @@ jobs:
                'fernandoenzo/docker-mkvtoolnix',
                'fernandoenzo/docker-nginx',
                'fernandoenzo/docker-obfsproxy',
+               'fernandoenzo/docker-stunnel',
               ]
 
     steps:
