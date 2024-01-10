@@ -12,7 +12,7 @@ apt-get update ; apt-get install -y --no-install-recommends aptitude
 
 bash /tmp/contents/scripts/install-language
 
-aptitude install -R -y anacron bash-completion bzip2 ca-certificates cron htop iproute2 iptables iputils-ping less nano psmisc procps rar readline-common rdfind secure-delete sudo tmux tree unrar unzip wget zip
+aptitude install -R -y anacron bash-completion bzip2 ca-certificates cron htop iproute2 iptables iputils-ping less nano psmisc procps rar readline-common rdfind ripgrep secure-delete sudo tmux tree unrar unzip wget zip
 
 aptitude install -y gnupg
 
