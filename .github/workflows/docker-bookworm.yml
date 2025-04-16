@@ -16,6 +16,7 @@ jobs:
                'fernandoenzo/docker-bind',
                'fernandoenzo/docker-coturn',
                'fernandoenzo/docker-ddclient',
+               'fernandoenzo/docker-dnscrypt',
                'fernandoenzo/docker-email',
                'fernandoenzo/docker-mariadb',
                'fernandoenzo/docker-matrix',
