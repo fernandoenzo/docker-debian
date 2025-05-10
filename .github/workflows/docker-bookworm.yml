@@ -18,6 +18,7 @@ jobs:
                'fernandoenzo/docker-ddclient',
                'fernandoenzo/docker-dnscrypt',
                'fernandoenzo/docker-email',
+               'fernandoenzo/docker-haproxy',
                'fernandoenzo/docker-mariadb',
                'fernandoenzo/docker-matrix',
                'fernandoenzo/docker-mkvtoolnix',
