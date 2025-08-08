@@ -14,6 +14,7 @@ jobs:
       matrix:
         repo: [
                'fernandoenzo/docker-mkvtoolnix',
+               'fernandoenzo/docker-hitch',
                'fernandoenzo/docker-nginx',
                'fernandoenzo/docker-obfsproxy',
                'fernandoenzo/docker-stunnel',
